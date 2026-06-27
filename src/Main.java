@@ -10,17 +10,45 @@ public class Main {
         while (choice.equals("1")) {
 
             Scanner sc = new Scanner(System.in);
-            System.out.println("Nhập vào số nguyên N: ");
+            System.out.println("Nhập vào số tháng trong năm: ");
             int n = Integer.parseInt(sc.nextLine());
-            if (n<0) n= n*(-1);
-            int soDu, soChia,dem = 0,tong=0;
             do {
-                soChia = n/10;
-                soDu = n%10;
-                tong = tong + soDu;
-                n=n/10;
-            }while (soChia > 0);
-            System.out.printf("Tổng các chữ số là: %d",tong);
+
+                if (n<1 || n>12) {
+                    System.out.println("Số tháng không hợp lệ! Nhập lại: ");
+                    n = Integer.parseInt(sc.nextLine());
+                }
+            }while(n<1 || n>12);
+
+            switch (n) {
+                case 1:
+                    System.out.printf("Tháng %d có 31 ngày",n); break;
+                case 2:
+                    System.out.printf("Tháng %d có 28 hoặc 29 ngày",n);break;
+                case 3:
+                    System.out.printf("Tháng %d có 31 ngày",n);break;
+                case 4:
+                    System.out.printf("Tháng %d có 30 ngày",n);break;
+                case 5:
+                    System.out.printf("Tháng %d có 31 ngày",n);break;
+                case 6:
+                    System.out.printf("Tháng %d có 30 ngày",n);break;
+                case 7:
+                    System.out.printf("Tháng %d có 31 ngày",n);break;
+                case 8:
+                    System.out.printf("Tháng %d có 31 ngày",n);break;
+                case 9:
+                    System.out.printf("Tháng %d có 30 ngày",n);break;
+                case 10:
+                    System.out.printf("Tháng %d có 31 ngày",n);break;
+                case 11:
+                    System.out.printf("Tháng %d có 30 ngày",n);break;
+                case 12:
+                    System.out.printf("Tháng %d có 31 ngày",n);break;
+
+
+            }
+
 
             System.out.println("\nBạn có muốn nhập lại không? ");
             System.out.println("nếu có ấn phím 1, nếu không ấn bất kì để thoát! ");
